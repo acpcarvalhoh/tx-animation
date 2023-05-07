@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bgHeader: #8E9AAF;
+    --bgMain: #EFF1FF;
+
+    --ffBody: 'Staatliches', sans-serif;
+
+    --fcH2: #4A4E69;
+    --fSize-H2: 2rem;
+
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: var(--ffBody);
+    padding: 0 1rem;
+}
+
+.page{
+    max-width: 384px;
+    margin: auto;
+}
+
+header{
+    text-align: center;
+    background: var(--bgHeader);
+}
+
+header img{
+    display: block;
+    margin: auto;
+    padding: 3.2rem 0;
+    transform: rotate(360deg);
+    animation: spin 2s linear infinite;
+}
+
+header .bg-title{
+    padding-bottom: 2.9rem;
+}
+
+header h1{
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: #fff;
+    background: #CBC0D3;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.05em;
+}
+
+main{
+    padding: 1.4rem 3.2rem 6rem 3.2rem;
+    background: var(--bgMain);
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+main p{
+    font: 400 1.7rem 'Palanquin', sans-serif;
+    line-height: 1.6rem;
+    text-align: center;
+    color: #23053A;
+    margin-bottom: 3.2rem;
+}
+
+.cards{
+    position: relative;
+    animation: downtop 500ms reverse backwards;
+}
+
+.cards img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1.6rem;
+}
+
+
+.bigger{
+    height: 450px;
+}
+.short{
+    height: 250px;
+}
+
+.cards img:hover{
+    transform: scale(1.1);
+}
+
+.cards h2{
+    font: 600 var(--fSize-H2) 'Staatliches', sans-serif;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    color: var(--fcH2);
+    text-transform: uppercase;
+    background: #f8daf2;
+    width: 11.2rem;
+    border-radius: 2rem;
+    letter-spacing: 0.05em;
+    padding: 0 2.4rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 1.6rem;
+    top: 1.6rem;
+    animation: topdown 700ms;
+    transition-delay: 900ms;
+}
+
+/* Animações */
+
+/* Animação do logo */
+@keyframes spin{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Animação dos tipos de sorvete */
+@keyframes topdown{
+    0%{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação dos cards com imagens */
+@keyframes downtop{
+    100%{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+}
